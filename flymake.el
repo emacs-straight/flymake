@@ -114,7 +114,7 @@
 (require 'thingatpt) ; end-of-thing
 (require 'warnings) ; warning-numeric-level, display-warning
 (require 'compile) ; for some faces
-;; We need the next require to avoid compiler warnings and run-time
+;; We need the next `require' to avoid compiler warnings and run-time
 ;; errors about mouse-wheel-up/down-event in builds --without-x, where
 ;; mwheel is not preloaded.
 (require 'mwheel)
@@ -1295,9 +1295,9 @@ special *Flymake log* buffer."  :group 'flymake :lighter
     (when flymake--state
       (maphash (lambda (_backend state)
                  (flymake--clear-foreign-diags state))
-               flymake--state)))
+               flymake--state))))
    ;; turning Flymake on or off has consequences for listings
-   (flymake--update-diagnostics-listings (current-buffer))))
+   (flymake--update-diagnostics-listings (current-buffer)))
 
 (defun flymake--schedule-timer-maybe ()
   "(Re)schedule an idle timer for checking the buffer.
