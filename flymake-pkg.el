@@ -1,2 +1,0 @@
-;; Generated package description from flymake.el  -*- no-byte-compile: t -*-
-(define-package "flymake" "1.3.7.0.20240604.221628" "A universal on-the-fly syntax checker" '((emacs "26.1") (eldoc "1.14.0") (project "0.7.1")) :commit "533ed7b221ab40be217e951e925739360e457b50" :url "https://elpa.gnu.org/packages/flymake.html" :authors '(("Pavel Kobyakov" . "pk_at_work@yahoo.com")) :maintainer '("João Távora" . "joaotavora@gmail.com") :keywords '("c" "languages" "tools"))
