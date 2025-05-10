@@ -1,4 +1,4 @@
-This is docM9vgc1.info, produced by makeinfo version 6.8 from
+This is docLRVJPe.info, produced by makeinfo version 6.8 from
 flymake.texi.
 
 This manual is for GNU Flymake (version 1.3.4, April 2023).
@@ -21,7 +21,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docM9vgc1.info,  Node: Top,  Next: Using Flymake,  Up: (dir)
+File: docLRVJPe.info,  Node: Top,  Next: Using Flymake,  Up: (dir)
 
 GNU Flymake
 ***********
@@ -63,7 +63,7 @@ Elisp interface.  *Note Flymake API::.
 * Index::
 
 
-File: docM9vgc1.info,  Node: Using Flymake,  Next: Flymake API,  Prev: Top,  Up: Top
+File: docLRVJPe.info,  Node: Using Flymake,  Next: Flymake API,  Prev: Top,  Up: Top
 
 1 Using Flymake
 ***************
@@ -90,7 +90,7 @@ Features::.
 * Customizable variables::
 
 
-File: docM9vgc1.info,  Node: Starting Flymake,  Next: Finding diagnostics,  Up: Using Flymake
+File: docLRVJPe.info,  Node: Starting Flymake,  Next: Finding diagnostics,  Up: Using Flymake
 
 1.1 Starting Flymake
 ====================
@@ -117,7 +117,7 @@ regions are highlighted.  *Note Finding diagnostics::, for how to learn
 what the problems are.
 
 
-File: docM9vgc1.info,  Node: Finding diagnostics,  Next: Mode line status,  Prev: Starting Flymake,  Up: Using Flymake
+File: docLRVJPe.info,  Node: Finding diagnostics,  Next: Mode line status,  Prev: Starting Flymake,  Up: Using Flymake
 
 1.2 Finding diagnostics
 =======================
@@ -160,7 +160,7 @@ click) the command ‘flymake-show-buffer-diagnostics’ attempts to reveal
 said diagnostic in the listing.
 
 
-File: docM9vgc1.info,  Node: Mode line status,  Next: Troubleshooting,  Prev: Finding diagnostics,  Up: Using Flymake
+File: docLRVJPe.info,  Node: Mode line status,  Next: Troubleshooting,  Prev: Finding diagnostics,  Up: Using Flymake
 
 1.3 Mode line status
 ====================
@@ -201,7 +201,7 @@ can use the variables ‘flymake-mode-line-format’ and
 variables::.
 
 
-File: docM9vgc1.info,  Node: Troubleshooting,  Next: Customizable variables,  Prev: Mode line status,  Up: Using Flymake
+File: docLRVJPe.info,  Node: Troubleshooting,  Next: Customizable variables,  Prev: Mode line status,  Up: Using Flymake
 
 1.4 Troubleshooting
 ===================
@@ -236,7 +236,7 @@ the top menu bar or just left of the status indicator.  The command
 and ‘warning-minimum-level’ variables.
 
 
-File: docM9vgc1.info,  Node: Customizable variables,  Prev: Troubleshooting,  Up: Using Flymake
+File: docLRVJPe.info,  Node: Customizable variables,  Prev: Troubleshooting,  Up: Using Flymake
 
 1.5 Customizable variables
 ==========================
@@ -336,7 +336,7 @@ configuration of the Flymake user interface.
      A custom face for summarizing diagnostic notes.
 
 
-File: docM9vgc1.info,  Node: Flymake API,  Next: The legacy Proc backend,  Prev: Using Flymake,  Up: Top
+File: docLRVJPe.info,  Node: Flymake API,  Next: The legacy Proc backend,  Prev: Using Flymake,  Up: Top
 
 2 Flymake API
 *************
@@ -360,7 +360,7 @@ Flymake’s API supports the following use cases:
 * Inspecting diagnostics::
 
 
-File: docM9vgc1.info,  Node: Flymake error types,  Next: Backend functions,  Up: Flymake API
+File: docLRVJPe.info,  Node: Flymake error types,  Next: Backend functions,  Up: Flymake API
 
 2.1 Customizing Flymake error types
 ===================================
@@ -483,7 +483,7 @@ or ‘:error’.
              (get type 'flymake-overlay-control)))
 
 
-File: docM9vgc1.info,  Node: Backend functions,  Next: Inspecting diagnostics,  Prev: Flymake error types,  Up: Flymake API
+File: docLRVJPe.info,  Node: Backend functions,  Next: Inspecting diagnostics,  Prev: Flymake error types,  Up: Flymake API
 
 2.2 Backend functions
 =====================
@@ -586,7 +586,7 @@ of keyword-value pairs of the form
 * An annotated example backend::
 
 
-File: docM9vgc1.info,  Node: Flymake utility functions,  Next: Foreign and list-only diagnostics,  Up: Backend functions
+File: docLRVJPe.info,  Node: Flymake utility functions,  Next: Foreign and list-only diagnostics,  Up: Backend functions
 
 2.2.1 Flymake utility functions
 -------------------------------
@@ -630,7 +630,7 @@ Troubleshooting::):
      is used to display the warning in Flymake’s log buffer.
 
 
-File: docM9vgc1.info,  Node: Foreign and list-only diagnostics,  Next: An annotated example backend,  Prev: Flymake utility functions,  Up: Backend functions
+File: docLRVJPe.info,  Node: Foreign and list-only diagnostics,  Next: An annotated example backend,  Prev: Flymake utility functions,  Up: Backend functions
 
 2.2.2 Foreign and list-only diagnostics
 ---------------------------------------
@@ -674,7 +674,7 @@ alternative ways to go about doing this:
      will take care of that.
 
 
-File: docM9vgc1.info,  Node: An annotated example backend,  Prev: Foreign and list-only diagnostics,  Up: Backend functions
+File: docLRVJPe.info,  Node: An annotated example backend,  Prev: Foreign and list-only diagnostics,  Up: Backend functions
 
 2.2.3 An annotated example backend
 ----------------------------------
@@ -780,7 +780,7 @@ Binding::) to be active.
      (add-hook 'ruby-mode-hook 'ruby-setup-flymake-backend)
 
 
-File: docM9vgc1.info,  Node: Inspecting diagnostics,  Prev: Backend functions,  Up: Flymake API
+File: docLRVJPe.info,  Node: Inspecting diagnostics,  Prev: Backend functions,  Up: Flymake API
 
 2.3 Inspecting diagnostics
 ==========================
@@ -805,7 +805,7 @@ region.
 diagnostic’s origin, code and message in a single string.
 
 
-File: docM9vgc1.info,  Node: The legacy Proc backend,  Next: GNU Free Documentation License,  Prev: Flymake API,  Up: Top
+File: docLRVJPe.info,  Node: The legacy Proc backend,  Next: GNU Free Documentation License,  Prev: Flymake API,  Up: Top
 
 3 The legacy “Proc” backend
 ***************************
@@ -829,7 +829,7 @@ patterns.  It is also controlled by its own set of customization
 variables.
 
 
-File: docM9vgc1.info,  Node: Proc customization variables,  Next: Adding support for a new syntax check tool,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Proc customization variables,  Next: Adding support for a new syntax check tool,  Up: The legacy Proc backend
 
 3.1 Customization variables for the Proc backend
 ================================================
@@ -876,7 +876,7 @@ File: docM9vgc1.info,  Node: Proc customization variables,  Next: Adding support
      modes::.
 
 
-File: docM9vgc1.info,  Node: Adding support for a new syntax check tool,  Next: Implementation overview,  Prev: Proc customization variables,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Adding support for a new syntax check tool,  Next: Implementation overview,  Prev: Proc customization variables,  Up: The legacy Proc backend
 
 3.2 Adding support for a new syntax check tool
 ==============================================
@@ -930,7 +930,7 @@ new tool is not yet supported by Flymake, add a new entry to the
 support for various syntax check tools.
 
 
-File: docM9vgc1.info,  Node: Example---Configuring a tool called directly,  Next: Example---Configuring a tool called via make,  Up: Adding support for a new syntax check tool
+File: docLRVJPe.info,  Node: Example---Configuring a tool called directly,  Next: Example---Configuring a tool called via make,  Up: Adding support for a new syntax check tool
 
 3.2.1 Example—Configuring a tool called directly
 ------------------------------------------------
@@ -972,7 +972,7 @@ and builds an appropriate command line.
                  flymake-proc-err-line-patterns))
 
 
-File: docM9vgc1.info,  Node: Example---Configuring a tool called via make,  Prev: Example---Configuring a tool called directly,  Up: Adding support for a new syntax check tool
+File: docLRVJPe.info,  Node: Example---Configuring a tool called via make,  Prev: Example---Configuring a tool called directly,  Up: Adding support for a new syntax check tool
 
 3.2.2 Example—Configuring a tool called via make
 ------------------------------------------------
@@ -1019,7 +1019,7 @@ check-syntax:
 	$(COMPILE) -o /dev/null -S ${CHK_SOURCES} || true
 
 
-File: docM9vgc1.info,  Node: Implementation overview,  Next: Making a temporary copy,  Prev: Adding support for a new syntax check tool,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Implementation overview,  Next: Making a temporary copy,  Prev: Adding support for a new syntax check tool,  Up: The legacy Proc backend
 
 3.3 Implementation overview
 ===========================
@@ -1058,7 +1058,7 @@ temporary copies, finding master files, etc.), as well as some
 tool-specific (routines for Make, Ant, etc.) code.
 
 
-File: docM9vgc1.info,  Node: Making a temporary copy,  Next: Locating a master file,  Prev: Implementation overview,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Making a temporary copy,  Next: Locating a master file,  Prev: Implementation overview,  Up: The legacy Proc backend
 
 3.4 Making a temporary copy
 ===========================
@@ -1088,7 +1088,7 @@ master file is saved to ‘file_flymake_master.cpp’, and the last one is
 passed to the syntax check tool.
 
 
-File: docM9vgc1.info,  Node: Locating a master file,  Next: Getting the include directories,  Prev: Making a temporary copy,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Locating a master file,  Next: Getting the include directories,  Prev: Making a temporary copy,  Up: The legacy Proc backend
 
 3.5 Locating a master file
 ==========================
@@ -1119,7 +1119,7 @@ syntax check is aborted, and corresponding status (‘!’) is reported in
 the mode line.  *Note Mode line status::.
 
 
-File: docM9vgc1.info,  Node: Getting the include directories,  Next: Locating the buildfile,  Prev: Locating a master file,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Getting the include directories,  Next: Locating the buildfile,  Prev: Locating a master file,  Up: The legacy Proc backend
 
 3.6 Getting the include directories
 ===================================
@@ -1142,7 +1142,7 @@ operation, its return value is cached in the hash table.  The cache is
 cleared in the beginning of every syntax check attempt.
 
 
-File: docM9vgc1.info,  Node: Locating the buildfile,  Next: Starting the syntax check process,  Prev: Getting the include directories,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Locating the buildfile,  Next: Starting the syntax check process,  Prev: Getting the include directories,  Up: The legacy Proc backend
 
 3.7 Locating the buildfile
 ==========================
@@ -1169,7 +1169,7 @@ no build file, the syntax check is aborted.
    Buildfile values are also cached.
 
 
-File: docM9vgc1.info,  Node: Starting the syntax check process,  Next: Parsing the output,  Prev: Locating the buildfile,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Starting the syntax check process,  Next: Parsing the output,  Prev: Locating the buildfile,  Up: The legacy Proc backend
 
 3.8 Starting the syntax check process
 =====================================
@@ -1182,7 +1182,7 @@ check tool.  When exiting Emacs, running processes will be killed
 without prompting the user.
 
 
-File: docM9vgc1.info,  Node: Parsing the output,  Next: Interaction with other modes,  Prev: Starting the syntax check process,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Parsing the output,  Next: Interaction with other modes,  Prev: Starting the syntax check process,  Up: The legacy Proc backend
 
 3.9 Parsing the output
 ======================
@@ -1210,7 +1210,7 @@ The buffer for which the process output belongs is determined from the
 process-id->buffer mapping updated after every process launch/exit.
 
 
-File: docM9vgc1.info,  Node: Interaction with other modes,  Prev: Parsing the output,  Up: The legacy Proc backend
+File: docLRVJPe.info,  Node: Interaction with other modes,  Prev: Parsing the output,  Up: The legacy Proc backend
 
 3.10 Interaction with other modes
 =================================
@@ -1231,7 +1231,7 @@ compilation, ‘flymake-proc-compile’.  It just kills all the active
 syntax check processes before calling ‘compile’.
 
 
-File: docM9vgc1.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: The legacy Proc backend,  Up: Top
+File: docLRVJPe.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: The legacy Proc backend,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -1713,7 +1713,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docM9vgc1.info,  Node: Index,  Prev: GNU Free Documentation License,  Up: Top
+File: docLRVJPe.info,  Node: Index,  Prev: GNU Free Documentation License,  Up: Top
 
 Index
 *****
