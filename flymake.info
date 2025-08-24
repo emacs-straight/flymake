@@ -1,4 +1,4 @@
-This is docpjAyfj.info, produced by makeinfo version 6.8 from
+This is docpwn1fI.info, produced by makeinfo version 6.8 from
 flymake.texi.
 
 This manual is for GNU Flymake (version 1.3.4, April 2023).
@@ -21,7 +21,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docpjAyfj.info,  Node: Top,  Next: Using Flymake,  Up: (dir)
+File: docpwn1fI.info,  Node: Top,  Next: Using Flymake,  Up: (dir)
 
 GNU Flymake
 ***********
@@ -63,7 +63,7 @@ Elisp interface.  *Note Flymake API::.
 * Index::
 
 
-File: docpjAyfj.info,  Node: Using Flymake,  Next: Flymake API,  Prev: Top,  Up: Top
+File: docpwn1fI.info,  Node: Using Flymake,  Next: Flymake API,  Prev: Top,  Up: Top
 
 1 Using Flymake
 ***************
@@ -90,7 +90,7 @@ Features::.
 * Customizable variables::
 
 
-File: docpjAyfj.info,  Node: Starting Flymake,  Next: Finding diagnostics,  Up: Using Flymake
+File: docpwn1fI.info,  Node: Starting Flymake,  Next: Finding diagnostics,  Up: Using Flymake
 
 1.1 Starting Flymake
 ====================
@@ -117,7 +117,7 @@ regions are highlighted.  *Note Finding diagnostics::, for how to learn
 what the problems are.
 
 
-File: docpjAyfj.info,  Node: Finding diagnostics,  Next: Mode line status,  Prev: Starting Flymake,  Up: Using Flymake
+File: docpwn1fI.info,  Node: Finding diagnostics,  Next: Mode line status,  Prev: Starting Flymake,  Up: Using Flymake
 
 1.2 Finding diagnostics
 =======================
@@ -160,7 +160,7 @@ click) the command ‘flymake-show-buffer-diagnostics’ attempts to reveal
 said diagnostic in the listing.
 
 
-File: docpjAyfj.info,  Node: Mode line status,  Next: Troubleshooting,  Prev: Finding diagnostics,  Up: Using Flymake
+File: docpwn1fI.info,  Node: Mode line status,  Next: Troubleshooting,  Prev: Finding diagnostics,  Up: Using Flymake
 
 1.3 Mode line status
 ====================
@@ -201,7 +201,7 @@ can use the variables ‘flymake-mode-line-format’ and
 variables::.
 
 
-File: docpjAyfj.info,  Node: Troubleshooting,  Next: Customizable variables,  Prev: Mode line status,  Up: Using Flymake
+File: docpwn1fI.info,  Node: Troubleshooting,  Next: Customizable variables,  Prev: Mode line status,  Up: Using Flymake
 
 1.4 Troubleshooting
 ===================
@@ -236,7 +236,7 @@ the top menu bar or just left of the status indicator.  The command
 and ‘warning-minimum-level’ variables.
 
 
-File: docpjAyfj.info,  Node: Customizable variables,  Prev: Troubleshooting,  Up: Using Flymake
+File: docpwn1fI.info,  Node: Customizable variables,  Prev: Troubleshooting,  Up: Using Flymake
 
 1.5 Customizable variables
 ==========================
@@ -282,10 +282,8 @@ configuration of the Flymake user interface.
 ‘flymake-indicator-type’
      The indicator type which Flymake should use to indicate lines with
      errors or warnings.  Depending on your preference, this can either
-     use ‘fringes’ or ‘margins’ for indicating errors.  If set to
-     ‘fringes’ (the default), it will automatically fall back to using
-     margins in windows or frames without fringes, such as text
-     terminals.
+     use ‘fringes’ or ‘margins’ for indicating errors.  On text
+     terminals, only ‘margins’ is available.
 
 ‘flymake-error-bitmap’
      A bitmap used in the fringe to mark lines for which an error has
@@ -336,7 +334,7 @@ configuration of the Flymake user interface.
      A custom face for summarizing diagnostic notes.
 
 
-File: docpjAyfj.info,  Node: Flymake API,  Next: The legacy Proc backend,  Prev: Using Flymake,  Up: Top
+File: docpwn1fI.info,  Node: Flymake API,  Next: The legacy Proc backend,  Prev: Using Flymake,  Up: Top
 
 2 Flymake API
 *************
@@ -360,7 +358,7 @@ Flymake’s API supports the following use cases:
 * Inspecting diagnostics::
 
 
-File: docpjAyfj.info,  Node: Flymake error types,  Next: Backend functions,  Up: Flymake API
+File: docpwn1fI.info,  Node: Flymake error types,  Next: Backend functions,  Up: Flymake API
 
 2.1 Customizing Flymake error types
 ===================================
@@ -483,7 +481,7 @@ or ‘:error’.
              (get type 'flymake-overlay-control)))
 
 
-File: docpjAyfj.info,  Node: Backend functions,  Next: Inspecting diagnostics,  Prev: Flymake error types,  Up: Flymake API
+File: docpwn1fI.info,  Node: Backend functions,  Next: Inspecting diagnostics,  Prev: Flymake error types,  Up: Flymake API
 
 2.2 Backend functions
 =====================
@@ -586,7 +584,7 @@ of keyword-value pairs of the form
 * An annotated example backend::
 
 
-File: docpjAyfj.info,  Node: Flymake utility functions,  Next: Foreign and list-only diagnostics,  Up: Backend functions
+File: docpwn1fI.info,  Node: Flymake utility functions,  Next: Foreign and list-only diagnostics,  Up: Backend functions
 
 2.2.1 Flymake utility functions
 -------------------------------
@@ -630,7 +628,7 @@ Troubleshooting::):
      is used to display the warning in Flymake’s log buffer.
 
 
-File: docpjAyfj.info,  Node: Foreign and list-only diagnostics,  Next: An annotated example backend,  Prev: Flymake utility functions,  Up: Backend functions
+File: docpwn1fI.info,  Node: Foreign and list-only diagnostics,  Next: An annotated example backend,  Prev: Flymake utility functions,  Up: Backend functions
 
 2.2.2 Foreign and list-only diagnostics
 ---------------------------------------
@@ -674,7 +672,7 @@ alternative ways to go about doing this:
      will take care of that.
 
 
-File: docpjAyfj.info,  Node: An annotated example backend,  Prev: Foreign and list-only diagnostics,  Up: Backend functions
+File: docpwn1fI.info,  Node: An annotated example backend,  Prev: Foreign and list-only diagnostics,  Up: Backend functions
 
 2.2.3 An annotated example backend
 ----------------------------------
@@ -780,7 +778,7 @@ Binding::) to be active.
      (add-hook 'ruby-mode-hook 'ruby-setup-flymake-backend)
 
 
-File: docpjAyfj.info,  Node: Inspecting diagnostics,  Prev: Backend functions,  Up: Flymake API
+File: docpwn1fI.info,  Node: Inspecting diagnostics,  Prev: Backend functions,  Up: Flymake API
 
 2.3 Inspecting diagnostics
 ==========================
@@ -805,7 +803,7 @@ region.
 diagnostic’s origin, code and message in a single string.
 
 
-File: docpjAyfj.info,  Node: The legacy Proc backend,  Next: GNU Free Documentation License,  Prev: Flymake API,  Up: Top
+File: docpwn1fI.info,  Node: The legacy Proc backend,  Next: GNU Free Documentation License,  Prev: Flymake API,  Up: Top
 
 3 The legacy “Proc” backend
 ***************************
@@ -829,7 +827,7 @@ patterns.  It is also controlled by its own set of customization
 variables.
 
 
-File: docpjAyfj.info,  Node: Proc customization variables,  Next: Adding support for a new syntax check tool,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Proc customization variables,  Next: Adding support for a new syntax check tool,  Up: The legacy Proc backend
 
 3.1 Customization variables for the Proc backend
 ================================================
@@ -876,7 +874,7 @@ File: docpjAyfj.info,  Node: Proc customization variables,  Next: Adding support
      modes::.
 
 
-File: docpjAyfj.info,  Node: Adding support for a new syntax check tool,  Next: Implementation overview,  Prev: Proc customization variables,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Adding support for a new syntax check tool,  Next: Implementation overview,  Prev: Proc customization variables,  Up: The legacy Proc backend
 
 3.2 Adding support for a new syntax check tool
 ==============================================
@@ -930,7 +928,7 @@ new tool is not yet supported by Flymake, add a new entry to the
 support for various syntax check tools.
 
 
-File: docpjAyfj.info,  Node: Example---Configuring a tool called directly,  Next: Example---Configuring a tool called via make,  Up: Adding support for a new syntax check tool
+File: docpwn1fI.info,  Node: Example---Configuring a tool called directly,  Next: Example---Configuring a tool called via make,  Up: Adding support for a new syntax check tool
 
 3.2.1 Example—Configuring a tool called directly
 ------------------------------------------------
@@ -972,7 +970,7 @@ and builds an appropriate command line.
                  flymake-proc-err-line-patterns))
 
 
-File: docpjAyfj.info,  Node: Example---Configuring a tool called via make,  Prev: Example---Configuring a tool called directly,  Up: Adding support for a new syntax check tool
+File: docpwn1fI.info,  Node: Example---Configuring a tool called via make,  Prev: Example---Configuring a tool called directly,  Up: Adding support for a new syntax check tool
 
 3.2.2 Example—Configuring a tool called via make
 ------------------------------------------------
@@ -1019,7 +1017,7 @@ check-syntax:
 	$(COMPILE) -o /dev/null -S ${CHK_SOURCES} || true
 
 
-File: docpjAyfj.info,  Node: Implementation overview,  Next: Making a temporary copy,  Prev: Adding support for a new syntax check tool,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Implementation overview,  Next: Making a temporary copy,  Prev: Adding support for a new syntax check tool,  Up: The legacy Proc backend
 
 3.3 Implementation overview
 ===========================
@@ -1058,7 +1056,7 @@ temporary copies, finding master files, etc.), as well as some
 tool-specific (routines for Make, Ant, etc.) code.
 
 
-File: docpjAyfj.info,  Node: Making a temporary copy,  Next: Locating a master file,  Prev: Implementation overview,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Making a temporary copy,  Next: Locating a master file,  Prev: Implementation overview,  Up: The legacy Proc backend
 
 3.4 Making a temporary copy
 ===========================
@@ -1088,7 +1086,7 @@ master file is saved to ‘file_flymake_master.cpp’, and the last one is
 passed to the syntax check tool.
 
 
-File: docpjAyfj.info,  Node: Locating a master file,  Next: Getting the include directories,  Prev: Making a temporary copy,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Locating a master file,  Next: Getting the include directories,  Prev: Making a temporary copy,  Up: The legacy Proc backend
 
 3.5 Locating a master file
 ==========================
@@ -1119,7 +1117,7 @@ syntax check is aborted, and corresponding status (‘!’) is reported in
 the mode line.  *Note Mode line status::.
 
 
-File: docpjAyfj.info,  Node: Getting the include directories,  Next: Locating the buildfile,  Prev: Locating a master file,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Getting the include directories,  Next: Locating the buildfile,  Prev: Locating a master file,  Up: The legacy Proc backend
 
 3.6 Getting the include directories
 ===================================
@@ -1142,7 +1140,7 @@ operation, its return value is cached in the hash table.  The cache is
 cleared in the beginning of every syntax check attempt.
 
 
-File: docpjAyfj.info,  Node: Locating the buildfile,  Next: Starting the syntax check process,  Prev: Getting the include directories,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Locating the buildfile,  Next: Starting the syntax check process,  Prev: Getting the include directories,  Up: The legacy Proc backend
 
 3.7 Locating the buildfile
 ==========================
@@ -1169,7 +1167,7 @@ no build file, the syntax check is aborted.
    Buildfile values are also cached.
 
 
-File: docpjAyfj.info,  Node: Starting the syntax check process,  Next: Parsing the output,  Prev: Locating the buildfile,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Starting the syntax check process,  Next: Parsing the output,  Prev: Locating the buildfile,  Up: The legacy Proc backend
 
 3.8 Starting the syntax check process
 =====================================
@@ -1182,7 +1180,7 @@ check tool.  When exiting Emacs, running processes will be killed
 without prompting the user.
 
 
-File: docpjAyfj.info,  Node: Parsing the output,  Next: Interaction with other modes,  Prev: Starting the syntax check process,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Parsing the output,  Next: Interaction with other modes,  Prev: Starting the syntax check process,  Up: The legacy Proc backend
 
 3.9 Parsing the output
 ======================
@@ -1210,7 +1208,7 @@ The buffer for which the process output belongs is determined from the
 process-id->buffer mapping updated after every process launch/exit.
 
 
-File: docpjAyfj.info,  Node: Interaction with other modes,  Prev: Parsing the output,  Up: The legacy Proc backend
+File: docpwn1fI.info,  Node: Interaction with other modes,  Prev: Parsing the output,  Up: The legacy Proc backend
 
 3.10 Interaction with other modes
 =================================
@@ -1231,7 +1229,7 @@ compilation, ‘flymake-proc-compile’.  It just kills all the active
 syntax check processes before calling ‘compile’.
 
 
-File: docpjAyfj.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: The legacy Proc backend,  Up: Top
+File: docpwn1fI.info,  Node: GNU Free Documentation License,  Next: Index,  Prev: The legacy Proc backend,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -1713,7 +1711,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docpjAyfj.info,  Node: Index,  Prev: GNU Free Documentation License,  Up: Top
+File: docpwn1fI.info,  Node: Index,  Prev: GNU Free Documentation License,  Up: Top
 
 Index
 *****
@@ -1760,7 +1758,7 @@ Index
 * flymake logging:                       Troubleshooting.      (line 24)
 * flymake mode line:                     Mode line status.     (line  6)
 * flymake-autoresize-margins:            Customizable variables.
-                                                               (line 70)
+                                                               (line 68)
 * flymake-category:                      Flymake error types.  (line 59)
 * flymake-diag-region:                   Flymake utility functions.
                                                                (line 29)
@@ -1769,7 +1767,7 @@ Index
 * flymake-diagnostic-buffer:             Flymake error types.  (line 91)
 * flymake-diagnostic-end:                Flymake error types.  (line 91)
 * flymake-diagnostic-format-alist:       Customizable variables.
-                                                               (line 88)
+                                                               (line 86)
 * flymake-diagnostic-functions:          Backend functions.    (line  6)
 * flymake-diagnostic-text:               Flymake error types.  (line 91)
 * flymake-diagnostics:                   Inspecting diagnostics.
@@ -1780,11 +1778,11 @@ Index
                                                                (line 32)
 * flymake-error <1>:                     Flymake error types.  (line 69)
 * flymake-error-bitmap:                  Customizable variables.
-                                                               (line 52)
+                                                               (line 50)
 * flymake-error-eol:                     Customizable variables.
-                                                               (line 91)
+                                                               (line 89)
 * flymake-fringe-indicator-position:     Customizable variables.
-                                                               (line 60)
+                                                               (line 58)
 * flymake-indicator-type:                Customizable variables.
                                                                (line 44)
 * flymake-list-only-diagnostics:         Foreign and list-only diagnostics.
@@ -1794,9 +1792,9 @@ Index
 * flymake-make-diagnostic:               Flymake utility functions.
                                                                (line  9)
 * flymake-margin-indicator-position:     Customizable variables.
-                                                               (line 67)
+                                                               (line 65)
 * flymake-margin-indicators-string:      Customizable variables.
-                                                               (line 63)
+                                                               (line 61)
 * flymake-mode-line-counter-format:      Customizable variables.
                                                                (line 15)
 * flymake-mode-line-format:              Customizable variables.
@@ -1809,7 +1807,7 @@ Index
                                                                (line 40)
 * flymake-note <1>:                      Flymake error types.  (line 69)
 * flymake-note-eol:                      Customizable variables.
-                                                               (line 97)
+                                                               (line 95)
 * flymake-proc-allowed-file-name-masks:  Proc customization variables.
                                                                (line  6)
 * flymake-proc-check-file-limit:         Proc customization variables.
@@ -1835,7 +1833,7 @@ Index
 * flymake-reporting-backends:            Troubleshooting.      (line 13)
 * flymake-running-backends:              Troubleshooting.      (line 13)
 * flymake-show-diagnostics-at-end-of-line: Customizable variables.
-                                                               (line 79)
+                                                               (line 77)
 * flymake-start-on-flymake-mode:         Customizable variables.
                                                                (line 24)
 * flymake-start-on-save-buffer:          Customizable variables.
@@ -1845,11 +1843,11 @@ Index
                                                                (line 36)
 * flymake-warning <1>:                   Flymake error types.  (line 69)
 * flymake-warning-bitmap:                Customizable variables.
-                                                               (line 56)
+                                                               (line 54)
 * flymake-warning-eol:                   Customizable variables.
-                                                               (line 94)
+                                                               (line 92)
 * flymake-wrap-around:                   Customizable variables.
-                                                               (line 75)
+                                                               (line 73)
 * foreign diagnostics:                   Foreign and list-only diagnostics.
                                                                (line 14)
 * include directories (C/C++ specific):  Getting the include directories.
@@ -1913,28 +1911,28 @@ Node: Finding diagnostics4345
 Node: Mode line status6462
 Node: Troubleshooting8367
 Node: Customizable variables10125
-Node: Flymake API13824
-Node: Flymake error types14447
-Node: Backend functions20013
-Node: Flymake utility functions24808
-Node: Foreign and list-only diagnostics26964
-Node: An annotated example backend29433
-Node: Inspecting diagnostics34346
-Node: The legacy Proc backend35483
-Node: Proc customization variables36217
-Node: Adding support for a new syntax check tool38242
-Node: Example---Configuring a tool called directly40638
-Node: Example---Configuring a tool called via make42368
-Node: Implementation overview44111
-Node: Making a temporary copy46039
-Node: Locating a master file47369
-Node: Getting the include directories48858
-Node: Locating the buildfile49952
-Node: Starting the syntax check process51310
-Node: Parsing the output51922
-Node: Interaction with other modes53417
-Node: GNU Free Documentation License54361
-Node: Index79727
+Node: Flymake API13716
+Node: Flymake error types14339
+Node: Backend functions19905
+Node: Flymake utility functions24700
+Node: Foreign and list-only diagnostics26856
+Node: An annotated example backend29325
+Node: Inspecting diagnostics34238
+Node: The legacy Proc backend35375
+Node: Proc customization variables36109
+Node: Adding support for a new syntax check tool38134
+Node: Example---Configuring a tool called directly40530
+Node: Example---Configuring a tool called via make42260
+Node: Implementation overview44003
+Node: Making a temporary copy45931
+Node: Locating a master file47261
+Node: Getting the include directories48750
+Node: Locating the buildfile49844
+Node: Starting the syntax check process51202
+Node: Parsing the output51814
+Node: Interaction with other modes53309
+Node: GNU Free Documentation License54253
+Node: Index79619
 
 End Tag Table
 
