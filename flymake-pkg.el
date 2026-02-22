@@ -1,2 +1,2 @@
-;; Generated package description from flymake.el  -*- no-byte-compile: t -*-
-(define-package "flymake" "1.4.3.0.20260111.34201" "A universal on-the-fly syntax checker" '((emacs "26.1") (eldoc "1.14.0") (project "0.11.1")) :commit "4484a9f87536ee0caff4b1f53fde8f4f3ac4adbe" :url "https://elpa.gnu.org/packages/flymake.html" :authors '(("Pavel Kobyakov" . "pk_at_work@yahoo.com")) :maintainer '("Spencer Baugh" . "sbaugh@janestreet.com") :keywords '("c" "languages" "tools"))
+;; Generated package description from flymake.el  -*- no-byte-compile: t; lexical-binding:t -*-
+(define-package "flymake" "1.4.3.0.20260221.132913" "A universal on-the-fly syntax checker" '((emacs "26.1") (eldoc "1.14.0") (project "0.11.1")) :commit "a61c098a517d29af38b065f946c4378a3b88bcd7" :url "https://elpa.gnu.org/packages/flymake.html" :authors '(("Pavel Kobyakov" . "pk_at_work@yahoo.com")) :maintainer '("Spencer Baugh" . "sbaugh@janestreet.com") :keywords '("c" "languages" "tools"))
