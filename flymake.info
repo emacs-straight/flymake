@@ -128,9 +128,9 @@ Alternatively, place point on the highlighted regions and use the
 commands ‘eldoc’ or ‘display-local-help’.
 
    Another easy way to get instant access to the diagnostic text is to
-set ‘flymake-show-diagnostics-at-end-of-line’ to a non-‘nil’ value.
-This makes the diagnostic messages appear at the end of the line where
-the regular annotation is located (*note Customizable variables::)
+set ‘flymake-inline-diagnostics’ to a non-‘nil’ value.  This makes the
+diagnostic messages appear directly in the buffer, in the vicinity of
+the affected line (*note Customizable variables::)
 
    If the diagnostics are outside the visible region of the buffer,
 ‘flymake-goto-next-error’ and ‘flymake-goto-prev-error’ let you navigate
@@ -312,26 +312,39 @@ configuration of the Flymake user interface.
      If non-‘nil’, moving to errors with ‘flymake-goto-next-error’ and
      ‘flymake-goto-prev-error’ wraps around buffer boundaries.
 
-‘flymake-show-diagnostics-at-end-of-line’
-     If non-‘nil’, show summarized descriptions of diagnostics at the
-     end of the line.  Depending on your preference, this can either be
+‘flymake-inline-diagnostics’
+     If non-‘nil’, annotate lines with diagnostics directly in the
+     buffer.  Depending on your preference, this can either be
      distracting and easily confused with actual code, or a significant
      early aid that relieves you from moving around or reaching for the
-     mouse to consult an error message.  This value may also be set to
-     ‘fancy’, which will attempt to layout diagnostics below the
-     affected line using unicode graphics to point to diagnostic locus.
+     mouse to consult an error message.  A number of styles can be used:
+     the value ‘eol’ shows all diagnostics at the end of the line,
+     ‘short’ shows only the most severe one, and ‘fancy’ lays out the
+     diagnostics below the affected line using Unicode graphics to point
+     to the diagnostic locus.
+
+     The value can also be an alist, which allows you to have the
+     position of point dictate the style used for nearby annotation of
+     nearby diagnostics.  The alist keys ‘current’ and ‘current-line’
+     designate the style affect the appearance of nearby diagnostics,
+     while a value keyed by ‘t’ is style used for every other
+     diagnostic.  For example, to keep a discreet ‘short’ annotation on
+     most lines while expanding to ‘fancy’ only for the diagnostic point
+     in currently on:
+
+          (setopt flymake-inline-diagnostics '((current . fancy) (t . short)))
 
 ‘flymake-diagnostic-format-alist’
      Control which parts of a diagnostic to show in various situations.
 
-‘flymake-error-eol’
-     A custom face for summarizing diagnostic error messages.
+‘flymake-error-inline’
+     A custom face for inline diagnostic error messages.
 
-‘flymake-warning-eol’
-     A custom face for summarizing diagnostic warning messages.
+‘flymake-warning-inline’
+     A custom face for inline diagnostic warning messages.
 
-‘flymake-note-eol’
-     A custom face for summarizing diagnostic notes.
+‘flymake-note-inline’
+     A custom face for inline diagnostic notes.
 
 
 File: flymake.info,  Node: Flymake API,  Next: The legacy Proc backend,  Prev: Using Flymake,  Up: Top
@@ -1720,186 +1733,187 @@ Index
 * Menu:
 
 * access diagnostic object:              Inspecting diagnostics.
-                                                               (line 17)
+                                                              (line  17)
 * add a log message:                     Flymake utility functions.
-                                                               (line 35)
+                                                              (line  35)
 * adding support for a new syntax check tool: Adding support for a new syntax check tool.
-                                                               (line  6)
+                                                              (line   6)
 * adding support for C (gcc+make):       Example---Configuring a tool called via make.
-                                                               (line  6)
+                                                              (line   6)
 * adding support for perl:               Example---Configuring a tool called directly.
-                                                               (line  6)
-* backend exceptions:                    Troubleshooting.      (line  6)
-* backend functions:                     Backend functions.    (line  6)
+                                                              (line   6)
+* backend exceptions:                    Troubleshooting.     (line   6)
+* backend functions:                     Backend functions.   (line   6)
 * backend, annotated example:            An annotated example backend.
-                                                               (line  6)
-* backends, disabled:                    Troubleshooting.      (line  6)
-* bitmap of diagnostic:                  Flymake error types.  (line 15)
+                                                              (line   6)
+* backends, disabled:                    Troubleshooting.     (line   6)
+* bitmap of diagnostic:                  Flymake error types. (line  15)
 * buffer position from line and column number: Flymake utility functions.
-                                                               (line 24)
+                                                              (line  24)
 * buildfile, locating:                   Locating the buildfile.
-                                                               (line  6)
+                                                              (line   6)
 * collect diagnostic objects:            Inspecting diagnostics.
-                                                               (line 11)
+                                                              (line  11)
 * create diagnostic object:              Flymake utility functions.
-                                                               (line  6)
+                                                              (line   6)
 * create diagnostic object for other buffer: Foreign and list-only diagnostics.
-                                                               (line  6)
+                                                              (line   6)
 * customizable variables:                Customizable variables.
-                                                               (line  6)
-* customizing error types:               Flymake error types.  (line  6)
-* disabled backends:                     Troubleshooting.      (line  6)
+                                                              (line   6)
+* customizing error types:               Flymake error types. (line   6)
+* disabled backends:                     Troubleshooting.     (line   6)
 * domestic diagnostics:                  Foreign and list-only diagnostics.
-                                                               (line 14)
-* error types, customization:            Flymake error types.  (line  6)
+                                                              (line  14)
+* error types, customization:            Flymake error types. (line   6)
 * example of backend:                    An annotated example backend.
-                                                               (line  6)
-* extending flymake:                     Flymake API.          (line  6)
-* flymake logging:                       Troubleshooting.      (line 24)
-* flymake mode line:                     Mode line status.     (line  6)
+                                                              (line   6)
+* extending flymake:                     Flymake API.         (line   6)
+* flymake logging:                       Troubleshooting.     (line  24)
+* flymake mode line:                     Mode line status.    (line   6)
 * flymake-autoresize-margins:            Customizable variables.
-                                                               (line 68)
-* flymake-category:                      Flymake error types.  (line 59)
+                                                              (line  68)
+* flymake-category:                      Flymake error types. (line  59)
 * flymake-diag-region:                   Flymake utility functions.
-                                                               (line 29)
-* flymake-diagnostic-backend:            Flymake error types.  (line 91)
-* flymake-diagnostic-beg:                Flymake error types.  (line 91)
-* flymake-diagnostic-buffer:             Flymake error types.  (line 91)
-* flymake-diagnostic-end:                Flymake error types.  (line 91)
+                                                              (line  29)
+* flymake-diagnostic-backend:            Flymake error types. (line  91)
+* flymake-diagnostic-beg:                Flymake error types. (line  91)
+* flymake-diagnostic-buffer:             Flymake error types. (line  91)
+* flymake-diagnostic-end:                Flymake error types. (line  91)
 * flymake-diagnostic-format-alist:       Customizable variables.
-                                                               (line 86)
-* flymake-diagnostic-functions:          Backend functions.    (line  6)
-* flymake-diagnostic-text:               Flymake error types.  (line 91)
+                                                              (line  99)
+* flymake-diagnostic-functions:          Backend functions.   (line   6)
+* flymake-diagnostic-text:               Flymake error types. (line  91)
 * flymake-diagnostics:                   Inspecting diagnostics.
-                                                               (line 11)
-* flymake-diagnostics <1>:               Flymake error types.  (line 91)
-* flymake-disabled-backends:             Troubleshooting.      (line 13)
+                                                              (line  11)
+* flymake-diagnostics <1>:               Flymake error types. (line  91)
+* flymake-disabled-backends:             Troubleshooting.     (line  13)
 * flymake-error:                         Customizable variables.
-                                                               (line 32)
-* flymake-error <1>:                     Flymake error types.  (line 69)
+                                                              (line  32)
+* flymake-error <1>:                     Flymake error types. (line  69)
 * flymake-error-bitmap:                  Customizable variables.
-                                                               (line 50)
-* flymake-error-eol:                     Customizable variables.
-                                                               (line 89)
+                                                              (line  50)
+* flymake-error-inline:                  Customizable variables.
+                                                              (line 102)
 * flymake-fringe-indicator-position:     Customizable variables.
-                                                               (line 58)
+                                                              (line  58)
 * flymake-indicator-type:                Customizable variables.
-                                                               (line 44)
+                                                              (line  44)
+* flymake-inline-diagnostics:            Customizable variables.
+                                                              (line  77)
 * flymake-list-only-diagnostics:         Foreign and list-only diagnostics.
-                                                               (line 27)
+                                                              (line  27)
 * flymake-log:                           Flymake utility functions.
-                                                               (line 39)
+                                                              (line  39)
 * flymake-make-diagnostic:               Flymake utility functions.
-                                                               (line  9)
+                                                              (line   9)
 * flymake-margin-indicator-position:     Customizable variables.
-                                                               (line 65)
+                                                              (line  65)
 * flymake-margin-indicators-string:      Customizable variables.
-                                                               (line 61)
+                                                              (line  61)
 * flymake-mode-line-counter-format:      Customizable variables.
-                                                               (line 15)
+                                                              (line  15)
 * flymake-mode-line-format:              Customizable variables.
-                                                               (line 12)
+                                                              (line  12)
 * flymake-mode-line-lighter:             Customizable variables.
-                                                               (line  9)
+                                                              (line   9)
 * flymake-no-changes-timeout:            Customizable variables.
-                                                               (line 19)
+                                                              (line  19)
 * flymake-note:                          Customizable variables.
-                                                               (line 40)
-* flymake-note <1>:                      Flymake error types.  (line 69)
-* flymake-note-eol:                      Customizable variables.
-                                                               (line 95)
+                                                              (line  40)
+* flymake-note <1>:                      Flymake error types. (line  69)
+* flymake-note-inline:                   Customizable variables.
+                                                              (line 108)
 * flymake-proc-allowed-file-name-masks:  Proc customization variables.
-                                                               (line  6)
+                                                              (line   6)
 * flymake-proc-check-file-limit:         Proc customization variables.
-                                                               (line 20)
+                                                              (line  20)
 * flymake-proc-compilation-prevents-syntax-check: Proc customization variables.
-                                                               (line 42)
+                                                              (line  42)
 * flymake-proc-compile:                  Interaction with other modes.
-                                                               (line 17)
+                                                              (line  17)
 * flymake-proc-diagnostic-type-pred:     Proc customization variables.
-                                                               (line 28)
+                                                              (line  28)
 * flymake-proc-err-line-patterns:        Proc customization variables.
-                                                               (line 24)
+                                                              (line  24)
 * flymake-proc-find-buildfile:           Locating the buildfile.
-                                                               (line 20)
+                                                              (line  20)
 * flymake-proc-get-project-include-dirs-function: Proc customization variables.
-                                                               (line 15)
+                                                              (line  15)
 * flymake-proc-legacy-flymake:           The legacy Proc backend.
-                                                               (line 19)
+                                                              (line  19)
 * flymake-proc-master-file-count-limit:  Proc customization variables.
-                                                               (line 19)
+                                                              (line  19)
 * flymake-proc-master-file-dirs:         Proc customization variables.
-                                                               (line 11)
-* flymake-reporting-backends:            Troubleshooting.      (line 13)
-* flymake-running-backends:              Troubleshooting.      (line 13)
-* flymake-show-diagnostics-at-end-of-line: Customizable variables.
-                                                               (line 77)
+                                                              (line  11)
+* flymake-reporting-backends:            Troubleshooting.     (line  13)
+* flymake-running-backends:              Troubleshooting.     (line  13)
 * flymake-start-on-flymake-mode:         Customizable variables.
-                                                               (line 24)
+                                                              (line  24)
 * flymake-start-on-save-buffer:          Customizable variables.
-                                                               (line 28)
-* flymake-type-name:                     Flymake error types.  (line 55)
+                                                              (line  28)
+* flymake-type-name:                     Flymake error types. (line  55)
 * flymake-warning:                       Customizable variables.
-                                                               (line 36)
-* flymake-warning <1>:                   Flymake error types.  (line 69)
+                                                              (line  36)
+* flymake-warning <1>:                   Flymake error types. (line  69)
 * flymake-warning-bitmap:                Customizable variables.
-                                                               (line 54)
-* flymake-warning-eol:                   Customizable variables.
-                                                               (line 92)
+                                                              (line  54)
+* flymake-warning-inline:                Customizable variables.
+                                                              (line 105)
 * flymake-wrap-around:                   Customizable variables.
-                                                               (line 73)
+                                                              (line  73)
 * foreign diagnostics:                   Foreign and list-only diagnostics.
-                                                               (line 14)
+                                                              (line  14)
 * include directories (C/C++ specific):  Getting the include directories.
-                                                               (line  6)
+                                                              (line   6)
 * interaction with compile mode, legacy proc backend: Interaction with other modes.
-                                                               (line  6)
+                                                              (line   6)
 * interaction with other modes, legacy proc backend: Interaction with other modes.
-                                                               (line  6)
+                                                              (line   6)
 * legacy proc backend:                   The legacy Proc backend.
-                                                               (line  6)
+                                                              (line   6)
 * list-only diagnostics:                 Foreign and list-only diagnostics.
-                                                               (line 27)
-* listing diagnostics:                   Finding diagnostics.  (line 25)
+                                                              (line  27)
+* listing diagnostics:                   Finding diagnostics. (line  25)
 * locating a master file:                Locating a master file.
-                                                               (line  6)
+                                                              (line   6)
 * locating the buildfile:                Locating the buildfile.
-                                                               (line  6)
-* logging:                               Troubleshooting.      (line 24)
+                                                              (line   6)
+* logging:                               Troubleshooting.     (line  24)
 * makefile, locating:                    Locating the buildfile.
-                                                               (line  6)
-* margin of diagnostic:                  Flymake error types.  (line 21)
+                                                              (line   6)
+* margin of diagnostic:                  Flymake error types. (line  21)
 * master file:                           Implementation overview.
-                                                               (line  6)
+                                                              (line   6)
 * master file, locating:                 Locating a master file.
-                                                               (line  6)
-* mode-line appearance of a diagnostic:  Flymake error types.  (line 62)
-* next and previous diagnostic:          Finding diagnostics.  (line 16)
-* overview of flymake:                   Using Flymake.        (line  6)
-* parsing the output, legacy proc backend: Parsing the output. (line  6)
-* predefined diagnostic types:           Flymake error types.  (line 69)
+                                                              (line   6)
+* mode-line appearance of a diagnostic:  Flymake error types. (line  62)
+* next and previous diagnostic:          Finding diagnostics. (line  16)
+* overview of flymake:                   Using Flymake.       (line   6)
+* parsing the output, legacy proc backend: Parsing the output.
+                                                              (line   6)
+* predefined diagnostic types:           Flymake error types. (line  69)
 * proc backend customization variables:  Proc customization variables.
-                                                               (line  6)
-* read diagnostic message:               Finding diagnostics.  (line  6)
-* reset disabled backends:               Troubleshooting.      (line 17)
-* severity of diagnostic:                Flymake error types.  (line 49)
-* starting Flymake:                      Starting Flymake.     (line  6)
-* summarized appearance of a diagnostic: Flymake error types.  (line 65)
+                                                              (line   6)
+* read diagnostic message:               Finding diagnostics. (line   6)
+* reset disabled backends:               Troubleshooting.     (line  17)
+* severity of diagnostic:                Flymake error types. (line  49)
+* starting Flymake:                      Starting Flymake.    (line   6)
+* summarized appearance of a diagnostic: Flymake error types. (line  65)
 * syntax check models:                   Implementation overview.
-                                                               (line  6)
+                                                              (line   6)
 * syntax check process, legacy proc backend: Starting the syntax check process.
-                                                               (line  6)
-* syntax check status:                   Mode line status.     (line  6)
+                                                              (line   6)
+* syntax check status:                   Mode line status.    (line   6)
 * temporary copy of the buffer:          Making a temporary copy.
-                                                               (line  6)
-* troubleshooting:                       Troubleshooting.      (line  6)
-* using flymake:                         Using Flymake.        (line  6)
+                                                              (line   6)
+* troubleshooting:                       Troubleshooting.     (line   6)
+* using flymake:                         Using Flymake.       (line   6)
 * utility functions:                     Flymake utility functions.
-                                                               (line  6)
+                                                              (line   6)
 * variables for customizing flymake:     Customizable variables.
-                                                               (line  6)
-* warning-minimum-level:                 Troubleshooting.      (line 32)
-* warning-minimum-log-level:             Troubleshooting.      (line 32)
+                                                              (line   6)
+* warning-minimum-level:                 Troubleshooting.     (line  32)
+* warning-minimum-log-level:             Troubleshooting.     (line  32)
 
 
 
@@ -1908,31 +1922,31 @@ Node: Top902
 Node: Using Flymake2449
 Node: Starting Flymake3316
 Node: Finding diagnostics4301
-Node: Mode line status6412
-Node: Troubleshooting8313
-Node: Customizable variables10067
-Node: Flymake API13656
-Node: Flymake error types14273
-Node: Backend functions19825
-Node: Flymake utility functions24608
-Node: Foreign and list-only diagnostics26752
-Node: An annotated example backend29195
-Node: Inspecting diagnostics34106
-Node: The legacy Proc backend35237
-Node: Proc customization variables35965
-Node: Adding support for a new syntax check tool37988
-Node: Example---Configuring a tool called directly40378
-Node: Example---Configuring a tool called via make42106
-Node: Implementation overview43843
-Node: Making a temporary copy45763
-Node: Locating a master file47087
-Node: Getting the include directories48574
-Node: Locating the buildfile49666
-Node: Starting the syntax check process51020
-Node: Parsing the output51630
-Node: Interaction with other modes53123
-Node: GNU Free Documentation License54065
-Node: Index79228
+Node: Mode line status6398
+Node: Troubleshooting8299
+Node: Customizable variables10053
+Node: Flymake API14331
+Node: Flymake error types14948
+Node: Backend functions20500
+Node: Flymake utility functions25283
+Node: Foreign and list-only diagnostics27427
+Node: An annotated example backend29870
+Node: Inspecting diagnostics34781
+Node: The legacy Proc backend35912
+Node: Proc customization variables36640
+Node: Adding support for a new syntax check tool38663
+Node: Example---Configuring a tool called directly41053
+Node: Example---Configuring a tool called via make42781
+Node: Implementation overview44518
+Node: Making a temporary copy46438
+Node: Locating a master file47762
+Node: Getting the include directories49249
+Node: Locating the buildfile50341
+Node: Starting the syntax check process51695
+Node: Parsing the output52305
+Node: Interaction with other modes53798
+Node: GNU Free Documentation License54740
+Node: Index79903
 
 End Tag Table
 
