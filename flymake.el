@@ -4,7 +4,7 @@
 
 ;; Author: Pavel Kobyakov <pk_at_work@yahoo.com>
 ;; Maintainer: Spencer Baugh <sbaugh@janestreet.com>
-;; Version: 1.4.5
+;; Version: 1.4.6
 ;; Keywords: c languages tools
 ;; Package-Requires: ((emacs "26.1") (eldoc "1.14.0") (project "0.11.1"))
 
@@ -1261,8 +1261,11 @@ different runs of the same backend."
     (lambda (&rest args)
       (when (buffer-live-p buffer)
         (with-current-buffer buffer
-          (goto-char point)
-          (apply #'flymake--handle-report backend token args))))))
+          (save-excursion
+            ;; A report touches the eol overlays whose style could be
+            ;; influenced by current-ish position.
+            (goto-char point)
+            (apply #'flymake--handle-report backend token args)))))))
 
 (defun flymake--collect (fn &optional message-prefix)
   "Collect Flymake backends matching FN.
@@ -1680,7 +1683,7 @@ default) no filter is applied."
                         (cl-sort retval (if (cl-plusp n) #'< #'>)
                                  :key #'overlay-start))))
          (tail ;; For compatibility with older Emacs.
-               (with-suppressed-warnings ((obsolete cl-member-if))
+               (with-no-warnings
                  (cl-member-if (lambda (ov)
                                  (if (cl-plusp n)
                                      (> (overlay-start ov)
