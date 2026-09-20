@@ -210,8 +210,10 @@ As Flymake supports multiple simultaneously active external backends, it
 becomes useful to monitor their status.  For example, some backends may
 take longer than others to respond or complete, and some may decide to
 _disable_ themselves if they are not suitable for the current buffer or
-encounter some unavoidable problem.  A disabled backend is not tried
-again for future checks of the current buffer.
+encounter some unavoidable problem.  In addition, most backends are
+disabled by default in buffers with untrusted content (*note Backend
+functions::).  A disabled backend is not tried again for future checks
+of the current buffer.
 
    The commands ‘flymake-reporting-backends’, ‘flymake-running-backends’
 and ‘flymake-disabled-backends’ show the backends currently used and
@@ -589,6 +591,13 @@ of keyword-value pairs of the form
    • ‘:region’, a cons (BEG .  END) of buffer positions indicating that
      the report applies to that region and that previous reports
      targeting other parts of the buffer remain valid.
+
+   By default, Flymake backends aren't enabled in buffers with untrusted
+content (*note (emacs)Host Security::).  But if a backend takes its own
+measures to ensure that the user's security won't be compromised by the
+contents of an untrusted file, it can be marked as safe, like this:
+
+     (put 'foo-flymake 'flymake-always-safe t)
 
 * Menu:
 
@@ -1768,8 +1777,9 @@ Index
 * example of backend:                    An annotated example backend.
                                                               (line   6)
 * extending flymake:                     Flymake API.         (line   6)
-* flymake logging:                       Troubleshooting.     (line  24)
+* flymake logging:                       Troubleshooting.     (line  26)
 * flymake mode line:                     Mode line status.    (line   6)
+* flymake-always-safe:                   Backend functions.   (line  97)
 * flymake-autoresize-margins:            Customizable variables.
                                                               (line  68)
 * flymake-category:                      Flymake error types. (line  59)
@@ -1786,7 +1796,7 @@ Index
 * flymake-diagnostics:                   Inspecting diagnostics.
                                                               (line  11)
 * flymake-diagnostics <1>:               Flymake error types. (line  91)
-* flymake-disabled-backends:             Troubleshooting.     (line  13)
+* flymake-disabled-backends:             Troubleshooting.     (line  15)
 * flymake-error:                         Customizable variables.
                                                               (line  32)
 * flymake-error <1>:                     Flymake error types. (line  69)
@@ -1845,8 +1855,8 @@ Index
                                                               (line  19)
 * flymake-proc-master-file-dirs:         Proc customization variables.
                                                               (line  11)
-* flymake-reporting-backends:            Troubleshooting.     (line  13)
-* flymake-running-backends:              Troubleshooting.     (line  13)
+* flymake-reporting-backends:            Troubleshooting.     (line  15)
+* flymake-running-backends:              Troubleshooting.     (line  15)
 * flymake-start-on-flymake-mode:         Customizable variables.
                                                               (line  24)
 * flymake-start-on-save-buffer:          Customizable variables.
@@ -1878,7 +1888,7 @@ Index
                                                               (line   6)
 * locating the buildfile:                Locating the buildfile.
                                                               (line   6)
-* logging:                               Troubleshooting.     (line  24)
+* logging:                               Troubleshooting.     (line  26)
 * makefile, locating:                    Locating the buildfile.
                                                               (line   6)
 * margin of diagnostic:                  Flymake error types. (line  21)
@@ -1895,7 +1905,7 @@ Index
 * proc backend customization variables:  Proc customization variables.
                                                               (line   6)
 * read diagnostic message:               Finding diagnostics. (line   6)
-* reset disabled backends:               Troubleshooting.     (line  17)
+* reset disabled backends:               Troubleshooting.     (line  19)
 * severity of diagnostic:                Flymake error types. (line  49)
 * starting Flymake:                      Starting Flymake.    (line   6)
 * summarized appearance of a diagnostic: Flymake error types. (line  65)
@@ -1912,8 +1922,8 @@ Index
                                                               (line   6)
 * variables for customizing flymake:     Customizable variables.
                                                               (line   6)
-* warning-minimum-level:                 Troubleshooting.     (line  32)
-* warning-minimum-log-level:             Troubleshooting.     (line  32)
+* warning-minimum-level:                 Troubleshooting.     (line  34)
+* warning-minimum-log-level:             Troubleshooting.     (line  34)
 
 
 
@@ -1924,29 +1934,29 @@ Node: Starting Flymake3316
 Node: Finding diagnostics4301
 Node: Mode line status6398
 Node: Troubleshooting8299
-Node: Customizable variables10053
-Node: Flymake API14331
-Node: Flymake error types14948
-Node: Backend functions20500
-Node: Flymake utility functions25283
-Node: Foreign and list-only diagnostics27427
-Node: An annotated example backend29870
-Node: Inspecting diagnostics34781
-Node: The legacy Proc backend35912
-Node: Proc customization variables36640
-Node: Adding support for a new syntax check tool38663
-Node: Example---Configuring a tool called directly41053
-Node: Example---Configuring a tool called via make42781
-Node: Implementation overview44518
-Node: Making a temporary copy46438
-Node: Locating a master file47762
-Node: Getting the include directories49249
-Node: Locating the buildfile50341
-Node: Starting the syntax check process51695
-Node: Parsing the output52305
-Node: Interaction with other modes53798
-Node: GNU Free Documentation License54740
-Node: Index79903
+Node: Customizable variables10168
+Node: Flymake API14446
+Node: Flymake error types15063
+Node: Backend functions20615
+Node: Flymake utility functions25732
+Node: Foreign and list-only diagnostics27876
+Node: An annotated example backend30319
+Node: Inspecting diagnostics35230
+Node: The legacy Proc backend36361
+Node: Proc customization variables37089
+Node: Adding support for a new syntax check tool39112
+Node: Example---Configuring a tool called directly41502
+Node: Example---Configuring a tool called via make43230
+Node: Implementation overview44967
+Node: Making a temporary copy46887
+Node: Locating a master file48211
+Node: Getting the include directories49698
+Node: Locating the buildfile50790
+Node: Starting the syntax check process52144
+Node: Parsing the output52754
+Node: Interaction with other modes54247
+Node: GNU Free Documentation License55189
+Node: Index80352
 
 End Tag Table
 
