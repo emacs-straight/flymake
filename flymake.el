@@ -1162,12 +1162,13 @@ report applies to that region."
                      (float-time
                       (time-since flymake-check-start-time))))))
     (setf (flymake--state-reported-p state) t)
-    ;; All of the above might have influecned the eol overlays, so maybe
+    ;; All of the above might have influenced the eol overlays, so maybe
     ;; issue a call to update them.  But to avoid flickering, wait for
-    ;; backends to finish first to avoid flickering when multiple
+    ;; all backends to finish first to avoid flickering when multiple
     ;; backends touch the same eol overlays.  Also don't update if
-    ;; `flymake-timer' is non-nil, meaning the a scheduled
-    ;; `flymake-start' hasn't yet finished.
+    ;; `flymake-timer' is non-nil, meaning that a scheduled
+    ;; `flymake-start' (which may bring in more diagnostics) hasn't yet
+    ;; started.
     (when (and flymake-inline-diagnostics
                (not flymake-timer)
                (not (cl-set-difference (flymake-running-backends)
@@ -1436,7 +1437,11 @@ Interactively, with a prefix arg, FORCE is t."
                (unless (flymake--suitably-fringed-p w)
                  (flymake--resize-margins)))
              (setq flymake-check-start-time (float-time))
-             (let ((backend-args
+             (let (;; bind `flymake-timer' to nil, so that backends
+                   ;; reporting synchronously from this stack frame do
+                   ;; update eol overlays in `flymake--handle-report'.
+                   (flymake-timer nil)
+                   (backend-args
                     (and
                      flymake--recent-changes
                      (list :recent-changes
@@ -2370,7 +2375,10 @@ some of this variable's contents the diagnostic listings.")
     (cl-loop
      for style = (cdr style-entry)
      for o in (overlays-at (line-end-position))
-     for src-ovs = (overlay-get o 'flymake-eol-source-overlays)
+     ;; Source overlays may have evaporated.
+     for src-ovs = (cl-remove-if-not
+                    #'overlay-buffer
+                    (overlay-get o 'flymake-eol-source-overlays))
      when (and src-ovs
                (or (eq (car style-entry) 'current-line)
                    (cl-some (lambda (o) (<= (overlay-start o) (point)
@@ -2397,6 +2405,9 @@ some of this variable's contents the diagnostic listings.")
                      (overlay-get o 'flymake-eol-source-overlays))
             (overlay-put o 'display (flymake--eol-overlay-summary o))
           (delete-overlay o))))
+    ;; Every eol overlay now has the default style, so none is
+    ;; current any more.
+    (setq flymake--eol-current-overlay nil)
     (flymake--update-current-eol-overlay)))
 
 (defun flymake--eol-default-style ()
